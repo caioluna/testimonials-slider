@@ -24,11 +24,6 @@ body {
   color: #202046;
   font-size: 17px;
   line-height: 1.4;
-  background-image: url("../images/pattern-bg.svg");
-  background-position: center 10%;
-  background-size: 320px;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 body::after {
@@ -55,9 +50,16 @@ main {
           justify-content: space-between;
 }
 
-.slide-left {
+.slide-photo {
   -webkit-transform: translateX(-250px);
           transform: translateX(-250px);
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.slide-text {
+  -webkit-transform: translateX(-305px);
+          transform: translateX(-305px);
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
 }
@@ -70,22 +72,28 @@ main {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-  margin-bottom: 80px;
+  margin-bottom: 90px;
 }
 
-.photo .img-wrapper {
+.photo .background {
+  width: 320px;
+  height: 320px;
+  position: absolute;
+  top: -15%;
+  lef: 0;
+  z-index: -1;
+}
+
+.photo .image-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 250px;
   overflow: hidden;
   border-radius: 5px;
-  -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
 }
 
-.photo .img-wrapper img {
-  scroll-snap-align: start;
+.photo .image-wrapper img {
   width: inherit;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
@@ -123,10 +131,10 @@ main {
   height: 15px;
 }
 
-.img-wrapper,
+.image-wrapper,
 .button-wrapper {
-  -webkit-box-shadow: 0 40px 80px -40px #574486;
-          box-shadow: 0 40px 80px -40px #574486;
+  -webkit-box-shadow: 0 40px 50px -40px #574486;
+          box-shadow: 0 40px 50px -40px #574486;
 }
 
 .text {
@@ -149,7 +157,7 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 250px;
+  width: 305px;
   overflow: hidden;
   -ms-scroll-snap-type: x mandatory;
       scroll-snap-type: x mandatory;
@@ -165,7 +173,7 @@ main {
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
-  width: 250px;
+  width: 305px;
   text-align: center;
 }
 

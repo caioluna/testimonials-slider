@@ -1,21 +1,35 @@
 const leftButton = document.getElementById("left-button")
 const rightButton = document.getElementById("right-button")
 
-const slideItem = document.querySelectorAll(".slide-item")
+const slidePhoto = document.querySelectorAll(".image-item")
+const slideText = document.querySelectorAll(".text-item")
 
 rightButton.addEventListener("click", () => {
 
-    slideItem.forEach(() => {
-        for (let item of slideItem) {
-            item.classList.add("slide-left")
+    slidePhoto.forEach(() => {
+        for (let item of slidePhoto) {
+            item.classList.add("slide-photo")
+        }
+    })
+
+    slideText.forEach(() => {
+        for (let item of slideText) {
+            item.classList.add("slide-text")
         }
     })
 })
 
 leftButton.addEventListener("click", () => {
-    slideItem.forEach(() => {
-        for (let item of slideItem) {
-            item.classList.remove("slide-left")
+
+    slidePhoto.forEach(() => {
+        for (let item of slidePhoto) {
+            item.classList.remove("slide-photo")
+        }
+    })
+    
+    slideText.forEach(() => {
+        for (let item of slideText) {
+            item.classList.remove("slide-text")
         }
     })
     

@@ -4,7 +4,9 @@ $dark-blue: hsl(240, 38%, 20%)
 
 $grayish-blue: hsl(240, 18%, 77%)
 
-$proportion-size: 250px
+$proportion-photo: 250px
+
+$proportion-text: 305px
 
 *
     margin: 0
@@ -26,12 +28,6 @@ body
     font-size: 17px
     line-height: 1.4
 
-    background-image: url("../images/pattern-bg.svg")
-    background-position: center 10%
-    background-size: 320px
-    background-repeat: no-repeat
-    background-attachment: fixed
-
     &::after
         content: ""
         width: 100vw
@@ -42,36 +38,45 @@ body
         bottom: 0
         z-index: -1
 
-
 main
     height: 535px
     display: flex
     flex-flow: column
     justify-content: space-between
 
-.slide-left
-    transform: translateX(-$proportion-size)
+.slide-photo
+    transform: translateX(-$proportion-photo)
     transition: all .3s ease
-    
+
+.slide-text
+    transform: translateX(-$proportion-text)
+    transition: all .3s ease
+
 
 .photo
     display: flex
     justify-content: center
     position: relative
-    margin-bottom: 80px
+    margin-bottom: 90px
 
-    .img-wrapper
+    .background
+        width: $proportion-photo + 70px
+        height: $proportion-photo + 70px
+        position: absolute
+        top: -15%
+        lef: 0
+
+        z-index: -1
+
+    .image-wrapper
         display: flex
-        width: $proportion-size
+        width: $proportion-photo
         overflow: hidden
         border-radius: 5px
-        scroll-snap-type: x mandatory
 
         img
-            scroll-snap-align: start
             width: inherit
             transition: all .2s ease
-
 
     .button-wrapper
         display: grid
@@ -96,10 +101,9 @@ main
                 width: 10px
                 height: 15px
 
-.img-wrapper,
+.image-wrapper,
 .button-wrapper
-    box-shadow: 0 40px 80px -40px #574486
-
+    box-shadow: 0 40px 50px -40px #574486
 
 .text
     position: relative
@@ -117,7 +121,7 @@ main
 
     .text-wrapper
         display: flex
-        width: $proportion-size
+        width: $proportion-text
         overflow: hidden
         scroll-snap-type: x mandatory
 
@@ -127,7 +131,7 @@ main
 
             p
                 flex: none
-                width: $proportion-size
+                width: $proportion-text
                 text-align: center
 
             .author,
