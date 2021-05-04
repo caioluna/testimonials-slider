@@ -8,50 +8,179 @@
 
 body {
   text-align: center;
+  width: 100vw;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  color: #202046;
+  font-size: 17px;
+  line-height: 1.4;
+  background-image: url("../images/pattern-bg.svg");
+  background-position: center 10%;
+  background-size: 320px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-.img-wrapper {
+body::after {
+  content: "";
+  width: 100vw;
+  height: 60px;
+  background: url("../images/pattern-curve.svg") bottom left/contain no-repeat;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
+
+main {
+  height: 535px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 300px;
-  overflow: hidden;
-  background: pink;
-}
-
-.img-wrapper img {
-  width: 300px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .slide-left {
-  -webkit-transform: translateX(-300px);
-          transform: translateX(-300px);
+  -webkit-transform: translateX(-250px);
+          transform: translateX(-250px);
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
-a {
-  display: inline-block;
-}
-
-.text-wrapper {
+.photo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 300px;
-  overflow: hidden;
-  background: cyan;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  margin-bottom: 80px;
 }
 
-.text-wrapper p {
+.photo .img-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 250px;
+  overflow: hidden;
+  border-radius: 5px;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+}
+
+.photo .img-wrapper img {
+  scroll-snap-align: start;
+  width: inherit;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.photo .button-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  position: absolute;
+  bottom: -20px;
+  z-index: 1;
+}
+
+.photo .button-wrapper button {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 40px;
+  background-color: #fff;
+}
+
+.photo .button-wrapper button:first-child {
+  border-radius: 40% 0 0 40%;
+}
+
+.photo .button-wrapper button:last-child {
+  border-radius: 0 50% 50% 0;
+}
+
+.photo .button-wrapper button img {
+  width: 10px;
+  height: 15px;
+}
+
+.img-wrapper,
+.button-wrapper {
+  -webkit-box-shadow: 0 40px 80px -40px #574486;
+          box-shadow: 0 40px 80px -40px #574486;
+}
+
+.text {
+  position: relative;
+}
+
+.text::before {
+  content: "";
+  width: 60px;
+  height: 50px;
+  background: url("../images/pattern-quotes.svg") top left/contain no-repeat;
+  position: absolute;
+  top: -25px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.text .text-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 250px;
+  overflow: hidden;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+}
+
+.text .text-wrapper .text-item {
+  scroll-snap-align: start;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.text .text-wrapper .text-item p {
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
-  width: 300px;
+  width: 250px;
   text-align: center;
+}
+
+.text .text-wrapper .text-item .author,
+.text .text-wrapper .text-item .role {
+  display: block;
+  font-weight: 700;
+}
+
+.text .text-wrapper .text-item .author {
+  margin-top: 20px;
+}
+
+.text .text-wrapper .text-item .role {
+  font-size: 16px;
+  color: #babacf;
 }
 /*# sourceMappingURL=style.css.map */

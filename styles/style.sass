@@ -4,6 +4,8 @@ $dark-blue: hsl(240, 38%, 20%)
 
 $grayish-blue: hsl(240, 18%, 77%)
 
+$proportion-size: 250px
+
 *
     margin: 0
     padding: 0
@@ -12,33 +14,130 @@ $grayish-blue: hsl(240, 18%, 77%)
 
 body
     text-align: center
+    width: 100vw
+    height: 100vh
     display: flex
     justify-content: center
+    align-items: center
 
-.img-wrapper
+    font-family: 'Inter', sans-serif
+    font-weight: 300
+    color: $dark-blue
+    font-size: 17px
+    line-height: 1.4
+
+    background-image: url("../images/pattern-bg.svg")
+    background-position: center 10%
+    background-size: 320px
+    background-repeat: no-repeat
+    background-attachment: fixed
+
+    &::after
+        content: ""
+        width: 100vw
+        height: 60px
+
+        background: url("../images/pattern-curve.svg") bottom left/contain no-repeat
+        position: absolute
+        bottom: 0
+        z-index: -1
+
+
+main
+    height: 535px
     display: flex
-    width: 300px
-    overflow: hidden
-    background: pink
-
-    img
-        width: 300px
+    flex-flow: column
+    justify-content: space-between
 
 .slide-left
-    transform: translateX(-300px)
+    transform: translateX(-$proportion-size)
+    transition: all .3s ease
+    
 
-        
-
-a
-    display: inline-block
-
-.text-wrapper
+.photo
     display: flex
-    width: 300px
-    overflow: hidden
-    background: cyan
+    justify-content: center
+    position: relative
+    margin-bottom: 80px
 
-    p
-        flex: none
-        width: 300px
-        text-align: center
+    .img-wrapper
+        display: flex
+        width: $proportion-size
+        overflow: hidden
+        border-radius: 5px
+        scroll-snap-type: x mandatory
+
+        img
+            scroll-snap-align: start
+            width: inherit
+            transition: all .2s ease
+
+
+    .button-wrapper
+        display: grid
+        grid-template-columns: 1fr 1fr
+        position: absolute
+        bottom: -20px
+        z-index: 1
+
+        button
+            display: grid
+            place-items: center
+            width: 45px
+            height: 40px
+            background-color: #fff
+
+            &:first-child
+                border-radius: 40% 0 0 40%
+            &:last-child
+                border-radius: 0 50% 50% 0
+            
+            img
+                width: 10px
+                height: 15px
+
+.img-wrapper,
+.button-wrapper
+    box-shadow: 0 40px 80px -40px #574486
+
+
+.text
+    position: relative
+
+    &::before
+            content: ""
+            width: 60px
+            height: 50px
+            background: url("../images/pattern-quotes.svg") top left/contain no-repeat
+            position: absolute
+            top: -25px
+            left: 0
+            right: 0
+            margin: 0 auto
+
+    .text-wrapper
+        display: flex
+        width: $proportion-size
+        overflow: hidden
+        scroll-snap-type: x mandatory
+
+        .text-item
+            scroll-snap-align: start
+            transition: all .3s ease
+
+            p
+                flex: none
+                width: $proportion-size
+                text-align: center
+
+            .author,
+            .role
+                display: block
+                font-weight: 700
+
+            .author
+                margin-top: 20px
+
+            .role
+                font-size: 16px
+                color: $grayish-blue
