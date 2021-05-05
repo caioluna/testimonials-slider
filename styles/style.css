@@ -116,10 +116,11 @@ main {
   width: 45px;
   height: 40px;
   background-color: #fff;
+  cursor: pointer;
 }
 
 .photo .button-wrapper button:first-child {
-  border-radius: 40% 0 0 40%;
+  border-radius: 50% 0 0 50%;
 }
 
 .photo .button-wrapper button:last-child {
@@ -190,5 +191,89 @@ main {
 .text .text-wrapper .text-item .role {
   font-size: 16px;
   color: #babacf;
+}
+
+@media (min-width: 1250px) {
+  body {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 32px;
+    line-height: 1.4;
+  }
+  body::after {
+    height: 200px;
+  }
+  main {
+    height: 800px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: row-reverse;
+            flex-flow: row-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .slide-photo {
+    -webkit-transform: translateX(-500px);
+            transform: translateX(-500px);
+  }
+  .slide-text {
+    -webkit-transform: translateX(-655px);
+            transform: translateX(-655px);
+  }
+  .photo {
+    height: 500px;
+    margin-bottom: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .photo .background {
+    width: 620px;
+    height: 620px;
+    top: -65px;
+    left: -40px;
+  }
+  .photo .image-wrapper {
+    width: 500px;
+    height: 500px;
+  }
+  .photo .button-wrapper {
+    left: 60px;
+  }
+  .photo .button-wrapper button {
+    width: 50px;
+    height: 45px;
+  }
+  .text {
+    width: 570px;
+  }
+  .text::before {
+    width: 100px;
+    height: 80px;
+    top: -50px;
+    left: 100px;
+    margin: 0;
+  }
+  .text .text-wrapper {
+    width: 655px;
+  }
+  .text .text-wrapper .text-item p {
+    width: 655px;
+    text-align: left;
+  }
+  .text .text-wrapper .text-item .author {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+  .text .text-wrapper .text-item .role {
+    margin-left: 5px;
+    font-size: 20px;
+    display: inline;
+  }
 }
 /*# sourceMappingURL=style.css.map */

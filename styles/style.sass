@@ -52,7 +52,6 @@ main
     transform: translateX(-$proportion-text)
     transition: all .3s ease
 
-
 .photo
     display: flex
     justify-content: center
@@ -91,9 +90,10 @@ main
             width: 45px
             height: 40px
             background-color: #fff
+            cursor: pointer
 
             &:first-child
-                border-radius: 40% 0 0 40%
+                border-radius: 50% 0 0 50%
             &:last-child
                 border-radius: 0 50% 50% 0
             
@@ -145,3 +145,79 @@ main
             .role
                 font-size: 16px
                 color: $grayish-blue
+
+@media (min-width: 1250px)
+
+    $proportion-photo-desktop: 500px
+    $proportion-text-desktop: 655px
+
+    body
+        justify-content: center
+        align-items: center
+
+        font-size: 32px
+        line-height: 1.4
+
+        &::after
+            height: 200px
+
+    main
+        height: 800px
+        flex-flow: row-reverse
+        align-items: center
+
+    .slide-photo
+        transform: translateX(-$proportion-photo-desktop)
+
+    .slide-text
+        transform: translateX(-$proportion-text-desktop)
+
+    .photo
+        height: $proportion-photo-desktop
+        margin-bottom: 0
+        align-items: center
+
+        .background
+            width: $proportion-photo-desktop + 120px
+            height: $proportion-photo-desktop + 120px
+            top: -65px
+            left: -40px
+
+        .image-wrapper
+            width: $proportion-photo-desktop
+            height: $proportion-photo-desktop
+
+        .button-wrapper
+            left: 60px
+
+            button
+                width: 50px
+                height: 45px
+
+    .text
+        width: 570px
+
+        &::before
+            width: 100px
+            height: 80px
+            top: -50px
+            left: 100px
+            margin: 0
+                
+        .text-wrapper
+            width: $proportion-text-desktop
+
+            .text-item
+
+                p
+                    width: $proportion-text-desktop
+                    text-align: left
+
+                .author
+                    font-size: 20px
+                    margin-top: 30px
+
+                .role
+                    margin-left: 5px
+                    font-size: 20px
+                    display: inline
